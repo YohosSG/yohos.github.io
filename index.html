@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yohos Pte Ltd - Premium Co-living in Singapore</title>
+<meta name="description" content="Yohos Pte Ltd offers modern and premium co-living spaces in Singapore. Join our vibrant community, enjoy private and shared rooms, and connect with like-minded people.">
+<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* 全局样式 */
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:'Poppins', sans-serif; line-height:1.6; scroll-behavior:smooth; background:#0f0f0f; color:#e0e0e0; overflow-x:hidden; }
+a { color:#25D366; text-decoration:none; }
+a:hover { text-decoration:underline; }
+h1,h2,h3 { font-family:'Montserrat',sans-serif; }
+section { padding:70px 20px; max-width:1100px; margin:auto; opacity:0; transform:translateY(30px); transition:all 0.8s ease; }
+
+/* 顶部导航 */
+header { position:sticky; top:0; z-index:100; background: rgba(15,15,15,0.7); padding:15px 0; text-align:center; transition: all 0.3s; }
+header.scrolled { background: rgba(15,15,15,1); padding:10px 0; }
+nav a { margin:0 20px; font-weight:600; color:#fff; transition:0.3s; }
+nav a.active, nav a:hover { border-bottom:2px solid #25D366; color:#25D366; }
+
+/* Banner 视频背景 */
+.banner { position:relative; text-align:center; height:80vh; display:flex; flex-direction:column; justify-content:center; overflow:hidden; }
+.banner video { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0; filter:brightness(0.6);}
+.banner .banner-content { position:relative; z-index:1; color:#fff; }
+.banner h1 { font-size:3em; text-shadow:2px 2px 8px rgba(0,0,0,0.6); }
+.banner p { font-size:1.4em; margin-top:15px; text-shadow:1px 1px 4px rgba(0,0,0,0.6); }
+
+/* 房间轮播 */
+.room-carousel { position:relative; overflow:hidden; max-width:1100px; margin:auto; }
+.rooms-wrapper { display:flex; transition:transform 0.5s ease-in-out; }
+.room { flex:0 0 300px; margin:0 15px; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border-radius:15px; padding:20px; box-shadow:0 4px 30px rgba(0,0,0,0.5); transition:0.3s; }
+.room img { width:100%; border-radius:10px; margin-bottom:15px; }
+.room:hover { transform:scale(1.05); box-shadow:0 8px 50px rgba(0,0,0,0.7); }
+.carousel-arrow { position:absolute; top:50%; transform:translateY(-50%); background: rgba(0,0,0,0.4); color:#fff; font-size:2em; padding:5px 12px; cursor:pointer; border-radius:50%; user-select:none; z-index:2; }
+.arrow-left { left:0; }
+.arrow-right { right:0; }
+
+/* Testimonials */
+.testimonials { position:relative; max-width:800px; margin:50px auto; overflow:hidden; }
+.testimonial-wrapper { display:flex; transition:transform 0.5s ease-in-out; }
+.testimonial { flex:0 0 100%; background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); padding:30px; border-radius:15px; text-align:center; margin:10px; }
+.testimonial p { font-style:italic; }
+.testimonial h4 { margin-top:15px; font-weight:600; }
+
+/* FAQ */
+.faq-item { margin-bottom:15px; }
+.faq-question { font-weight:600; cursor:pointer; padding:10px; background: rgba(255,255,255,0.05); border-radius:10px; }
+.faq-answer { padding:10px; display:none; background: rgba(255,255,255,0.02); border-radius:10px; margin-top:5px; }
+
+/* Contact & CTA */
+.contact-info { text-align:center; line-height:2; }
+.download-btn { display:inline-block; padding:12px 25px; border-radius:25px; font-weight:600; background: linear-gradient(135deg,#25D366,#00bfa5); color:#fff; transition:0.3s; }
+.download-btn:hover { opacity:0.9; }
+
+/* WhatsApp 悬浮 & 返回顶部 */
+.whatsapp-float { position:fixed; bottom:20px; right:20px; background:#25D366; color:#fff; font-size:2em; padding:15px; border-radius:50%; z-index:100; text-decoration:none; }
+#backToTop { position:fixed; bottom:80px; right:20px; background:#25D366; color:#fff; padding:12px 16px; border-radius:50%; cursor:pointer; display:none; z-index:100; }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <nav>
+    <a href="#home" class="active">Home</a>
+    <a href="#rooms">Rooms</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="banner" id="home">
+  <video autoplay muted loop playsinline>
+    <source src="assets/videos/video.mp4" type="video/mp4">
+  </video>
+  <div class="banner-content">
+    <h1>Welcome to Yohos</h1>
+    <p>Premium Co-living Spaces in Singapore</p>
+  </div>
+</section>
+
+<section id="rooms">
+<h2 style="text-align:center;margin-bottom:30px;">Our Rooms</h2>
+<div class="room-carousel">
+  <div class="rooms-wrapper" id="roomWrapper">
+    <div class="room"><img src="assets/images/room1.jpg" alt="Room 1"></div>
+    <div class="room"><img src="assets/images/room2.jpg" alt="Room 2"></div>
+    <div class="room"><img src="assets/images/room3.jpg" alt="Room 3"></div>
+    <div class="room"><img src="assets/images/room4.jpg" alt="Room 4"></div>
+    <div class="room"><img src="assets/images/room5.jpg" alt="Room 5"></div>
+    <div class="room"><img src="assets/images/room6.jpg" alt="Room 6"></div>
+    <div class="room"><img src="assets/images/room7.jpg" alt="Room 7"></div>
+  </div>
+  <div class="carousel-arrow arrow-left" id="roomPrev">❮</div>
+  <div class="carousel-arrow arrow-right" id="roomNext">❯</div>
+</div>
+</section>
+
+<section id="testimonials">
+<h2 style="text-align:center;margin-bottom:30px;">Testimonials</h2>
+<div class="testimonials">
+  <div class="testimonial-wrapper" id="testimonialWrapper">
+    <div class="testimonial"><p>"Amazing co-living experience!"</p><h4>Alex</h4></div>
+    <div class="testimonial"><p>"Great community and rooms."</p><h4>Sophia</h4></div>
+    <div class="testimonial"><p>"Highly recommend Yohos!"</p><h4>John</h4></div>
+  </div>
+</div>
+</section>
+
+<section id="faq">
+<h2 style="text-align:center;margin-bottom:20px;">FAQ</h2>
+<div class="faq-item">
+  <div class="faq-question">Do you offer short-term stays?</div>
+  <div class="faq-answer">Yes, we offer flexible rental plans.</div>
+</div>
+</section>
+
+<section id="download">
+<h2 style="text-align:center;margin-bottom:20px;">Download Room Handbook</h2>
+<p style="text-align:center;">
+<a href="room-handbook.pdf" target="_blank" class="download-btn">Download PDF</a>
+</p>
+</section>
+
+<section id="contact">
+<h2 style="text-align:center;margin-bottom:20px;">Contact Us</h2>
+<div class="contact-info">
+Email: info@yohos.org<br>
+Phone & WhatsApp: +65 9439 8007<br>
+Wechat: 619080998
+</div>
+</section>
+
+<!-- 悬浮 WhatsApp -->
+<a href="https://wa.me/6594398007" target="_blank" class="whatsapp-float" title="Chat with us on WhatsApp">💬</a>
+
+<!-- 返回顶部 -->
+<div id="backToTop">↑ Top</div>
+
+<footer style="text-align:center;padding:30px 0;background:#0f0f0f;">&copy; 2025 Yohos Pte Ltd. All rights reserved.</footer>
+
+<script>
+// ================= 房间轮播
+let roomIndex = 0;
+const roomWrapper = document.getElementById('roomWrapper');
+const rooms = roomWrapper.children;
+const totalRooms = rooms.length;
+document.getElementById('roomPrev').addEventListener('click',()=>{
+  roomIndex = Math.max(roomIndex-1,0);
+  roomWrapper.style.transform = `translateX(-${roomIndex*(rooms[0].offsetWidth+30)}px)`;
+});
+document.getElementById('roomNext').addEventListener('click',()=>{
+  roomIndex = Math.min(roomIndex+1,totalRooms-3);
+  roomWrapper.style.transform = `translateX(-${roomIndex*(rooms[0].offsetWidth+30)}px)`;
+});
+
+// ================= Testimonials 自动轮播
+let testimonialIndex = 0;
+const testimonials = document.getElementById('testimonialWrapper');
+const totalTestimonials = testimonials.children.length;
+function showTestimonial(index){
+  testimonials.style.transform = `translateX(-${index*100}%)`;
+}
+let testimonialTimer = setInterval(()=>{
+  testimonialIndex = (testimonialIndex + 1) % totalTestimonials;
+  showTestimonial(testimonialIndex);
+},4000);
+
+// ================= 返回顶部
+const backTop = document.getElementById('backToTop');
+window.addEventListener('scroll',()=>{ backTop.style.display = window.scrollY>300?'block':'none'; });
+backTop.addEventListener('click',()=>{ window.scrollTo({top:0,behavior:'smooth'}); });
+
+// ================= FAQ 折叠
+document.querySelectorAll('.faq-question').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const a = q.nextElementSibling;
+    a.style.display = (a.style.display==='block')?'none':'block';
+  });
+});
+
+// ================= 滚动动画
+window.addEventListener('scroll', function(){
+  document.querySelectorAll('section').forEach(sec=>{
+    if(window.scrollY + window.innerHeight > sec.offsetTop + 50){
+      sec.style.opacity=1;
+      sec.style.transform='translateY(0)';
+    }
+  });
+});
+</script>
+
+</body>
+</html>
